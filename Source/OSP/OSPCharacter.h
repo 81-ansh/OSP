@@ -4,7 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "OnlineSubsystem.h"
+#include "Interfaces/OnlineSessionInterface.h"
 #include "GameFramework/Character.h"
+#include "Interfaces/OnlineSessionDelegates.h"
 #include "Logging/LogMacros.h"
 #include "OSPCharacter.generated.h"
 
@@ -97,6 +99,18 @@ public:
 public:
 
 	//Pointer to the Online Session Interface
-	TSharedPtr<class IOnlineSession, ESPMode::ThreadSafe> OnlineSessionInterface;
+	IOnlineSessionPtr OnlineSessionInterface;
+
+protected:
+
+	UFUNCTION(BlueprintCallable)
+	void CreateGameSession();
+
+	//Creating callback to delegate
+	void OnCreateSessionComplete(FName SessionName, bool bWasSuccessful);
+
+private:
+	// Creating Delegate
+	FOnCreateSessionCompleteDelegate CreateSessionCompleteDelegate;
 };
 
