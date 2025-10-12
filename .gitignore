@@ -15,3 +15,5 @@ Build
 *.sdf
 *.VC.db
 *.VC.opendb
+
+*.user
