@@ -111,13 +111,14 @@ protected:
 
 	//Creating callback to delegate
 	void OnCreateSessionComplete(FName SessionName, bool bWasSuccessful);
-
 	void OnFindSessionsComplete(bool bWasSuccessful);
+	void OnJoinSessionComplete(FName SessionName, EOnJoinSessionCompleteResult::Type Result);
 
 private:
 	// Creating Delegate
 	FOnCreateSessionCompleteDelegate CreateSessionCompleteDelegate;
 	FOnFindSessionsCompleteDelegate FindSessionsCompleteDelegate;
-	TSharedPtr<FOnlineSessionSearch> SessionSearch; 
+	TSharedPtr<FOnlineSessionSearch> SessionSearch;
+	FOnJoinSessionCompleteDelegate JoinSessionCompleteDelegate;
 };
 
