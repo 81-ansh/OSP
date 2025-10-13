@@ -211,7 +211,7 @@ void AOSPCharacter::OnCreateSessionComplete(FName SessionName, bool bWasSuccessf
 		UWorld* World = GetWorld();
 		if (World)
 		{
-			World->ServerTravel(FString("/Game/ThirdPerson/Lobby?listen"));
+			World->ServerTravel(FString("/Game/ThirdPerson/Lvl_ThirdPerson?listen"));
 		}
 	}
 	else

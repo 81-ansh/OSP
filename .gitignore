@@ -16,4 +16,4 @@ Build
 *.VC.db
 *.VC.opendb
 
-*.user
+*.DotSettings.user
